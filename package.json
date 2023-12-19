@@ -2,6 +2,10 @@
   "name": "altes-haus-mit-garten",
   "type": "module",
   "version": "0.0.1",
+  "engines": {
+      "node": ">=10",
+      "pnpm": ">=3"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
