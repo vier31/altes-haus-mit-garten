@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import cloudinary from '../utils/configuredCloudinary';
+import ImageGalery from '../components/ImageGallery.astro'
+
+
+const streetImages = await cloudinary.api.resources({
+	type: 'upload',
+	prefix: 'portfolio-gallery/photography/street/'
+}).then(res => res.resources)
+
+const streetImageIds = streetImages.map(image => image.public_id)
+---
+
+<Layout title="index">
+	<main>
+		<ImageGalery imageIds={streetImageIds} />
+	</main>
+</Layout>
+
